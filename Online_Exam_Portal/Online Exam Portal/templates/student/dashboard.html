@@ -1,0 +1,275 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<!-- Welcome -->
+
+<div class="text-center mb-5">
+
+    <h2 class="fw-bold">
+        Welcome, {{ request.user.first_name }}
+    </h2>
+
+    <p class="lead text-muted">
+        Manage your examinations and track your performance.
+    </p>
+
+</div>
+
+<!-- Statistics -->
+
+<div class="row g-4">
+
+    <div class="col-md-4">
+
+        <div class="card shadow border-0 rounded-4 text-center">
+
+            <div class="card-body">
+
+                <h5 class="text-secondary">
+                    Available Exams
+                </h5>
+
+                <h1 class="fw-bold text-primary">
+                    {{ available }}
+                </h1>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card shadow border-0 rounded-4 text-center">
+
+            <div class="card-body">
+
+                <h5 class="text-secondary">
+                    Completed Exams
+                </h5>
+
+                <h1 class="fw-bold text-success">
+                    {{ completed }}
+                </h1>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card shadow border-0 rounded-4 text-center">
+
+            <div class="card-body">
+
+                <h5 class="text-secondary">
+                    Average Score
+                </h5>
+
+                <h1 class="fw-bold text-danger">
+                    {{ average }}%
+                </h1>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<hr class="my-5">
+
+<!-- Available Exams -->
+
+<h3 class="mb-4">
+
+    <i class="fas fa-file-alt text-primary"></i>
+
+    Available Exams
+
+</h3>
+
+<div class="row">
+
+{% for exam in exams %}
+
+<div class="col-lg-4 col-md-6 mb-4">
+
+    <div class="card shadow border-0 rounded-4 h-100">
+
+        <div class="card-body">
+
+            <h4 class="fw-bold">
+
+                {{ exam.title }}
+
+            </h4>
+
+            <p class="text-muted">
+
+                {{ exam.description }}
+
+            </p>
+
+            <hr>
+
+            <p>
+
+                <strong>Duration:</strong>
+
+                {{ exam.duration_minutes }} Minutes
+
+            </p>
+
+            <p>
+
+                <strong>Passing Score:</strong>
+
+                {{ exam.passing_score }}%
+
+            </p>
+
+        </div>
+
+        <div class="card-footer bg-white border-0">
+
+            <a href="{% url 'start_exam' exam.id %}"
+
+               class="btn btn-primary w-100">
+
+                <i class="fas fa-play-circle"></i>
+
+                Start Exam
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% empty %}
+
+<div class="col-12">
+
+    <div class="alert alert-success shadow">
+
+        🎉 Congratulations! You have completed all available exams.
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+<hr class="my-5">
+
+<!-- Previous Attempts -->
+
+<h3 class="mb-4">
+
+    <i class="fas fa-chart-bar text-success"></i>
+
+    Previous Attempts
+
+</h3>
+
+<div class="table-responsive">
+
+<table class="table table-bordered table-hover align-middle">
+
+    <thead class="table-dark">
+
+        <tr>
+
+            <th>Exam</th>
+
+            <th>Score</th>
+
+            <th>Percentage</th>
+
+            <th>Status</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+    {% for attempt in attempts %}
+
+        <tr>
+
+            <td>
+
+                {{ attempt.exam.title }}
+
+            </td>
+
+            <td>
+
+                {{ attempt.score }}
+
+            </td>
+
+            <td>
+
+                {{ attempt.percentage }}%
+
+            </td>
+
+            <td>
+
+                {% if attempt.is_passed %}
+
+                    <span class="badge bg-success">
+
+                        PASS
+
+                    </span>
+
+                {% else %}
+
+                    <span class="badge bg-danger">
+
+                        FAIL
+
+                    </span>
+
+                {% endif %}
+
+            </td>
+
+        </tr>
+
+    {% empty %}
+
+        <tr>
+
+            <td colspan="4" class="text-center">
+
+                No exams attempted yet.
+
+            </td>
+
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+</div>
+
+{% endblock %}

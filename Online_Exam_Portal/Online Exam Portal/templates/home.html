@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<div class="text-center py-5">
+
+    <h1 class="display-4 fw-bold">
+        Welcome to Online Examination Portal
+    </h1>
+
+    <p class="lead mt-3">
+
+        A secure platform where students can take online exams,
+        receive instant results, and track their performance.
+
+    </p>
+
+<div class="mt-4">
+
+    <a href="{% url 'login' %}" class="btn btn-primary btn-lg me-3">
+        <i class="fas fa-sign-in-alt"></i> Login
+    </a>
+
+    <a href="{% url 'register' %}" class="btn btn-success btn-lg">
+        <i class="fas fa-user-plus"></i> Register
+    </a>
+
+</div>
+
+</div>
+
+<hr class="my-5">
+
+<div class="row text-center">
+
+    <div class="col-md-4">
+
+        <i class="fas fa-user-graduate fa-3x text-primary mb-3"></i>
+
+        <h4>Student Portal</h4>
+
+        <p>
+            Register, log in, and take online examinations from anywhere.
+        </p>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <i class="fas fa-clock fa-3x text-success mb-3"></i>
+
+        <h4>Timed Exams</h4>
+
+        <p>
+            Every examination includes a countdown timer and automatic submission.
+        </p>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <i class="fas fa-chart-line fa-3x text-danger mb-3"></i>
+
+        <h4>Instant Results</h4>
+
+        <p>
+            View your score, percentage, and pass/fail status immediately.
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}

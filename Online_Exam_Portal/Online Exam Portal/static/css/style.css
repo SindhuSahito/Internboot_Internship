@@ -1,0 +1,73 @@
+body{
+    background:#f4f7fc;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar */
+
+.navbar{
+    padding:15px;
+}
+
+.navbar-brand{
+    font-size:24px;
+    font-weight:bold;
+}
+
+/* Cards */
+
+.card{
+    border:none;
+    border-radius:20px;
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+/* Buttons */
+
+.btn{
+    border-radius:10px;
+}
+
+.btn-primary{
+
+    background:#0d6efd;
+
+}
+
+.btn-success{
+
+    background:#198754;
+
+}
+
+/* Inputs */
+
+.form-control{
+
+    border-radius:10px;
+
+    padding:12px;
+
+}
+
+.form-control:focus{
+
+    box-shadow:0 0 10px rgba(13,110,253,.25);
+
+}
+
+/* Footer */
+
+footer{
+
+    margin-top:80px;
+
+}

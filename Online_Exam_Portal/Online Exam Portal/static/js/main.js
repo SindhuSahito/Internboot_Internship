@@ -1,0 +1,1 @@
+console.log("Online Examination Portal Loaded Successfully");

@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Available Exams
+{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-4">
+
+    <i class="fas fa-book"></i>
+
+    Available Exams
+
+</h2>
+
+<div class="row">
+
+{% for exam in exams %}
+
+<div class="col-md-4 mb-4">
+
+<div class="card shadow h-100">
+
+<div class="card-body">
+
+<h4>
+
+{{ exam.title }}
+
+</h4>
+
+<p>
+
+{{ exam.description }}
+
+</p>
+
+<hr>
+
+<p>
+
+<b>Duration:</b>
+
+{{ exam.duration_minutes }}
+
+Minutes
+
+</p>
+
+<p>
+
+<b>Passing Score:</b>
+
+{{ exam.passing_score }}%
+
+</p>
+
+<a href="{% url 'start_exam' exam.id %}"
+   class="btn btn-success w-100">
+
+    Start Exam
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+{% empty %}
+
+<div class="alert alert-warning">
+
+No Exams Available.
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}
