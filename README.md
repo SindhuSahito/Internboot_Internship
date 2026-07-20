@@ -39,55 +39,6 @@ InternBoot-Internship/
 
 ---
 
-
-## 📝 Task 1 — Online Examination Portal
-
-### Description
-
-Developed a web-based Online Examination Portal using **Django** and **SQLite**.
-
-Students can securely register, log in, attempt examinations within a time limit, and instantly receive their scores.
-
-Administrators can manage examinations, questions, options, and student attempts through the Django Admin Panel.
-
-### Technologies
-
-- Django
-- SQLite
-- Bootstrap 5
-- HTML
-- CSS
-- JavaScript
-
-### Features
-
-- User Registration
-- Secure Login
-- Student Dashboard
-- Admin Dashboard
-- Exam Management
-- Multiple Choice Questions
-- Countdown Timer
-- Automatic Submission
-- Result Generation
-- Performance Tracking
-
----
-
-# 📚 Skills Gained
-
-Throughout this internship, I gained practical experience in:
-
-- Full Stack Web Development
-- Database Design
-- Django Framework
-- Authentication Systems
-- CRUD Operations
-- Data Analysis
-- Software Project Development
-
----
-
 # 🎯 Internship Outcome
 
 This internship provided valuable industry-oriented experience by allowing me to build complete software applications and solve real-world problems through data-driven solutions.
