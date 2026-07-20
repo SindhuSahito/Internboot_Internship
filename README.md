@@ -55,7 +55,6 @@ Software Engineering Student
 
 💡 Passionate about:
 
--
 - Python
 - Data Analytics
 - Artificial Intelligence
